@@ -1,30 +1,20 @@
-import React, {Component, useState} from "react";
+import React, { useState } from "react";
 import '../styles/App.css';
-import slides from '../data';
+import {slides} from '../data';
+import ShowSlides from './ShowSlides';
 
 const App = ({slides}) => {
   console.log("in aPP");
-  console.log("slidestitle"+slides[0].title);
-
-  const showSlides =(slides)=>{
-    let allslides = slides.map((slide,index)=>{
-      return (
-        <h1 data-testid="title" key="index" value="index">{slide.title}</h1>
-      )
-    })
-    return allslides;
-  }
+  
+  
 
   return (
     <>
-      {/* {slides.map((slide)=>{
-        <>
-          <h1 data-testid="title">{slide.title}</h1>
-        </>
-      }} */}
-      <div id="amazonslides">
-        {showSlides(slides)}
-      </div>
+     <div className="App">
+      {/* <div id="slide"> */}
+        <ShowSlides slides={slides}/>
+      {/* </div> */}
+     </div> 
     </>
   )
 }

@@ -1,7 +1,19 @@
 .App {
-  max-width: 600px;
-  margin: 0 auto;
-  margin-top: 50px;
+  /* max-width: 600px; */
+  /* margin: 0 auto; */
+  /* margin-top: 50px; */
+  width :100vw;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ background-color: lightblue;
+  
+}
+body{
+  margin:0;
+  padding: 0;
 }
 
 #navigation {
@@ -10,14 +22,76 @@
 
 #navigation button {
   margin-right: 1rem;
+  
 }
 
+.carousel{
+  width: 60%;
+  height: 500px;
+  background-color: white;
+}
 #slide {
   border: 1px solid #eee;
   padding: 1rem;
   min-height: 300px;
+  width: 100%;
+  height: 100%;
 }
 
-button {
-  min-width: 80px;
+.carouselInner{
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
 }
+
+ /* button {
+  min-width: 50px;
+
+ } */
+
+.carouselInner .left{
+  flex:3%;
+  height: 100%;
+  background-color: rgb(0, 0, 0,0);
+  
+  display: grid;
+  place-items: center;
+  
+}
+.left button[data-testid],.right button[data-testid]{
+  cursor: pointer;
+}
+
+.carouselInner .center{
+  flex:90%;
+  height: 100%;
+  /* background-color: rgb(0, 0, 0,0.7);
+  display: inline; */
+}
+
+.carouselInner .right{
+  flex:3%;
+  height: 100%;
+  
+  background-color: rgb(0, 0, 0,0);
+  display: grid;
+  place-items: center;
+  
+}
+
+.restart button[data-testid]{
+  position: relative;
+  left: 45%;
+  cursor: pointer;
+}
+
+.center{
+  position:relative;
+  text-align: center;
+  
+}
+
+
