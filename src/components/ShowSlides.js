@@ -7,7 +7,7 @@ const ShowSlides = ({slides}) => {
     const [currentSlide,setCurrentSlide] = useState(0);
     const [nextBtn,setNextBtn] = useState(false);
     const [prevBtn,setPrevBtn] = useState(true);
-    const [resetBtn,setResetBtn] = useState(false);
+    const [resetBtn,setResetBtn] = useState(true);
    
     const getPrevSlide =()=>{
         console.log("in prev disable");
@@ -15,26 +15,39 @@ const ShowSlides = ({slides}) => {
         console.log("currentSlide"+currentSlide);
         if(currentSlide===0){
             setPrevBtn(true);
+            setResetBtn(true);
         }else{
         setPrevBtn(false);
+        setResetBtn(false);
         }
+        setNextBtn(false);
+        
     }
 
     const getNextSlide=()=>{
         currentSlide < slides.length - 1 && setCurrentSlide(currentSlide + 1);
         if(currentSlide===slides.length-1){
             setNextBtn(true);
+            // setResetBtn(true);
         }else{
         setNextBtn(false);
+        setResetBtn(false);
         }
+        setPrevBtn(false);
+        // setResetBtn(false);
+        
     }
 
     const resetSlides =()=>{
+        console.log(currentSlide);
         setCurrentSlide(0);
+        console.log(currentSlide);
         if(currentSlide===0){
+            console.log("inside reset");
             setResetBtn(true);
         }
         else{
+            console.log("else reset");
             setResetBtn(false);
             setPrevBtn(true);
             setNextBtn(false);
