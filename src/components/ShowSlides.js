@@ -26,7 +26,7 @@ const ShowSlides = ({slides}) => {
     
   }
     return (
-        <div className="carousel">
+        <>
             <div className="poster">
       {render_content(index)}
       </div>
@@ -35,7 +35,7 @@ const ShowSlides = ({slides}) => {
       <button data-testid="button-restart"  onClick={handlerestart} disabled={index==0 ?true:false}>Restart</button>
       <button data-testid="button-next" onClick={handlenext} disabled = {index ==slides.length-1?true:false}>Next</button>
             
-        </div>
+        </>
     );
 };
 
